@@ -1,0 +1,9 @@
+node_modules/
+dist/
+out/
+release/
+build/
+*.log
+*.map
+.DS_Store
+**/.DS_Store

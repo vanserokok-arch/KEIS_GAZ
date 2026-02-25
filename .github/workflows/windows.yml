@@ -1,0 +1,29 @@
+name: Windows CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build
+      - name: Renderer base check
+        run: npm run check:renderer-base
+      - name: Smoke
+        run: npm run smoke
+      - name: Dist Win
+        run: npm run dist:win
