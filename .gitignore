@@ -1,9 +1,8 @@
 node_modules/
 dist/
+.DS_Store
+
+# build outputs
 out/
 release/
-build/
 *.log
-*.map
-.DS_Store
-**/.DS_Store
